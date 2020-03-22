@@ -1,0 +1,6 @@
+mutation {
+  createAuthor(name: "JohnDoe", age: 26) {
+    name
+    age
+  }
+}
