@@ -1,13 +1,11 @@
-package ch.yagan.model;
+package ch.yagan.domainModels.author;
+
+import ch.yagan.core.CoreEntity;
 
 import javax.persistence.*;
 
 @Entity
-public class Author {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+public class Author extends CoreEntity {
 
 	@Column(name = "name", nullable = false)
 	private String name;
@@ -18,17 +16,14 @@ public class Author {
 	public Author() {
 	}
 
-	public Author(Long id) {
-		this.id = id;
+	public Author(String id) {
+		super(id);
 	}
 
-	public Author(String name, Integer age) {
+	public Author(String id, String name, Integer age) {
+		super(id);
 		this.name = name;
 		this.age = age;
-	}
-
-	public Long getId() {
-		return id;
 	}
 
 	public String getName() {
@@ -45,11 +40,6 @@ public class Author {
 
 	public void setAge(Integer age) {
 		this.age = age;
-	}
-
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", age=" + age + "]";
 	}
 
 }

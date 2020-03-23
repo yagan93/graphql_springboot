@@ -1,5 +1,5 @@
 type Author {
-	id: ID!
+	id: String!
 	name: String!
 	age: Int
 }
@@ -7,7 +7,6 @@ type Author {
 # Root
 type Query {
 	findAllAuthors: [Author]!
-	countAuthors: Long!
 }
 
 # Root

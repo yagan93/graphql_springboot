@@ -1,13 +1,12 @@
-package ch.yagan.model;
+package ch.yagan.domainModels.tutorial;
+
+import ch.yagan.core.CoreEntity;
+import ch.yagan.domainModels.author.Author;
 
 import javax.persistence.*;
 
 @Entity
-public class Tutorial {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+public class Tutorial extends CoreEntity {
 
 	@Column(name = "title", nullable = false)
 	private String title;
@@ -22,14 +21,15 @@ public class Tutorial {
 	public Tutorial() {
 	}
 
-	public Tutorial(String title, String description, Author author) {
+	public Tutorial(String id) {
+		super(id);
+	}
+
+	public Tutorial(String id, String title, String description, Author author) {
+		super(id);
 		this.title = title;
 		this.description = description;
 		this.author = author;
-	}
-
-	public Long getId() {
-		return id;
 	}
 
 	public String getTitle() {
@@ -54,11 +54,6 @@ public class Tutorial {
 
 	public void setAuthor(Author author) {
 		this.author = author;
-	}
-
-	@Override
-	public String toString() {
-		return "Tutorial [id=" + id + ", title=" + title + ", description=" + description + ", author=" + author + "]";
 	}
 
 }

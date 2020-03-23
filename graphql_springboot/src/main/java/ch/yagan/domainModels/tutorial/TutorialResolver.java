@@ -1,19 +1,19 @@
-package ch.yagan.resolver;
+package ch.yagan.domainModels.tutorial;
 
-import ch.yagan.repository.AuthorRepository;
+import ch.yagan.domainModels.author.AuthorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import ch.yagan.model.Author;
-import ch.yagan.model.Tutorial;
+import ch.yagan.domainModels.author.Author;
 import com.coxautodev.graphql.tools.GraphQLResolver;
 
 @Component
 public class TutorialResolver implements GraphQLResolver<Tutorial> {
-	@Autowired
+
 	private AuthorRepository authorRepository;
 
-	public TutorialResolver(AuthorRepository authorRepository) {
+	@Autowired
+	public TutorialResolver (AuthorRepository authorRepository){
 		this.authorRepository = authorRepository;
 	}
 

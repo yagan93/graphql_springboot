@@ -4,3 +4,12 @@ mutation {
     age
   }
 }
+
+query {
+    findAllAuthors{
+        name
+        age
+    }
+}
+
+
