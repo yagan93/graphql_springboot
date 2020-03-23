@@ -36,24 +36,26 @@ public class Tutorial extends CoreEntity {
 		return title;
 	}
 
-	public void setTitle(String title) {
+	public Tutorial setTitle(String title) {
 		this.title = title;
+		return this;
 	}
 
 	public String getDescription() {
 		return description;
 	}
 
-	public void setDescription(String description) {
+	public Tutorial setDescription(String description) {
 		this.description = description;
+		return this;
 	}
 
 	public Author getAuthor() {
 		return author;
 	}
 
-	public void setAuthor(Author author) {
+	public Tutorial setAuthor(Author author) {
 		this.author = author;
+		return this;
 	}
-
 }
