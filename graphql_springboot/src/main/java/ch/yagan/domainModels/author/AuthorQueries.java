@@ -18,7 +18,6 @@ public class AuthorQueries implements GraphQLQueryResolver {
         this.authorService = authorService;
     }
 
-    @ResponseStatus(value = HttpStatus.CREATED)
     public List<Author> findAllAuthors() {
         return authorService.findAll();
     }

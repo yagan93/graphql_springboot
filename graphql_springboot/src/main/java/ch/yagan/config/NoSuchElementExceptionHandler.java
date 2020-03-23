@@ -1,6 +1,7 @@
 package ch.yagan.config;
 
-import graphql.GraphQLError;
+import graphql.execution.ExecutionPath;
+import graphql.language.SourceLocation;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
@@ -15,7 +16,7 @@ public class NoSuchElementExceptionHandler implements ExceptionHandler {
     }
 
     @Override
-    public GraphQLError handle(Throwable e, GraphQLError originalError) {
-        return new GraphQLErrorAdapter(originalError, HttpStatus.NOT_FOUND);
+    public CustomGraphQLError handle(Throwable e, SourceLocation sourceLocation, ExecutionPath executionPath) {
+        return new CustomGraphQLError(e, sourceLocation, executionPath, HttpStatus.NOT_FOUND);
     }
 }

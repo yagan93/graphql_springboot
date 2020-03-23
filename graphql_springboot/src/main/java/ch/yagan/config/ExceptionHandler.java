@@ -1,11 +1,12 @@
 package ch.yagan.config;
 
-import graphql.GraphQLError;
+import graphql.execution.ExecutionPath;
+import graphql.language.SourceLocation;
 
 public interface ExceptionHandler {
 
     boolean canHandle(Throwable e);
 
-    GraphQLError handle(Throwable e, GraphQLError originalError);
+    CustomGraphQLError handle(Throwable e, SourceLocation sourceLocation, ExecutionPath executionPath);
 
 }
