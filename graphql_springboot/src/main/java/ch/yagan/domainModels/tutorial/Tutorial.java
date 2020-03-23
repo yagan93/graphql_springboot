@@ -15,7 +15,7 @@ public class Tutorial extends CoreEntity {
 	private String description;
 
 	@ManyToOne
-	@JoinColumn(name = "author_id", nullable = false, updatable = false)
+	@JoinColumn(name = "author_id")
 	private Author author;
 
 	public Tutorial() {

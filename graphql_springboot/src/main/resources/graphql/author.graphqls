@@ -4,12 +4,21 @@ type Author {
 	age: Int
 }
 
+input AuthorInput {
+	id: String
+	name: String!
+	age: Int
+}
+
 # Root
 type Query {
 	findAllAuthors: [Author]!
+	findAuthorById(id: String!): Author
 }
 
 # Root
 type Mutation {
-	createAuthor(name: String!, age: Int): Author!
+	createAuthor(author: AuthorInput!): Author!
+	updateAuthorById(id: String!, author: AuthorInput!): Author
+	deleteAuthorById(id: String!): Boolean
 }

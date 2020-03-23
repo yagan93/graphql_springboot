@@ -1,5 +1,7 @@
 package ch.yagan.domainModels.author;
 
+import ch.yagan.domainModels.author.mapper.AuthorInput;
+import ch.yagan.domainModels.author.mapper.AuthorMapper;
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -7,21 +9,25 @@ import org.springframework.stereotype.Component;
 @Component
 public class AuthorMutations implements GraphQLMutationResolver {
 
-    private AuthorRepository authorRepository;
+    private AuthorService authorService;
+    private AuthorMapper authorMapper;
 
     @Autowired
-    public AuthorMutations (AuthorRepository authorRepository){
-        this.authorRepository = authorRepository;
+    public AuthorMutations(AuthorService authorService, AuthorMapper authorMapper) {
+        this.authorService = authorService;
+        this.authorMapper = authorMapper;
     }
 
-    public Author createAuthor(String name, Integer age) {
-        Author author = new Author();
-        author.setName(name);
-        author.setAge(age);
-
-        authorRepository.save(author);
-
-        return author;
+    public Author createAuthor(AuthorInput author) {
+        return authorService.create(authorMapper.fromInput(author));
     }
 
+    public Author updateAuthorById(String id, AuthorInput author) {
+        return authorService.updateById(id, authorMapper.fromInput(author));
+    }
+
+    public Boolean deleteAuthorById(String id) {
+        authorService.deleteById(id);
+        return true;
+    }
 }

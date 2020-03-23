@@ -7,18 +7,17 @@ import org.springframework.stereotype.Component;
 @Component
 public class TutorialQueries implements GraphQLQueryResolver {
 
-    private TutorialRepository tutorialRepository;
+    private TutorialService tutorialService;
 
-    @Autowired
-    public TutorialQueries (TutorialRepository tutorialRepository){
-        this.tutorialRepository = tutorialRepository;
+    public TutorialQueries(TutorialService tutorialService) {
+        this.tutorialService = tutorialService;
     }
 
     public Iterable<Tutorial> findAllTutorials() {
-        return tutorialRepository.findAll();
+        return tutorialService.findAll();
     }
 
-    public long countTutorials() {
-        return tutorialRepository.count();
+    public Tutorial findTutorialById(String id) {
+        return tutorialService.findById(id);
     }
 }

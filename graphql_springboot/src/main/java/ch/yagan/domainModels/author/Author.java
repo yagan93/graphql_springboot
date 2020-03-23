@@ -5,6 +5,7 @@ import ch.yagan.core.CoreEntity;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "author")
 public class Author extends CoreEntity {
 
 	@Column(name = "name", nullable = false)

@@ -14,7 +14,7 @@ public abstract class CoreEntity {
 
     @Id
     @GeneratedValue(generator = "system-uuid")
-    @GenericGenerator(name = "system-uuid", strategy = "uuid")
+    @GenericGenerator(name = "system-uuid", strategy = "uuid2")
     @Generated(GenerationTime.ALWAYS)
     @Column(name = "id")
     private String id;
