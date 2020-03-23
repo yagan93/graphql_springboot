@@ -1,5 +1,6 @@
-package ch.yagan.config;
+package ch.yagan.config.errorHandling;
 
+import ch.yagan.config.CustomGraphQLError;
 import graphql.execution.ExecutionPath;
 import graphql.language.SourceLocation;
 import org.springframework.http.HttpStatus;

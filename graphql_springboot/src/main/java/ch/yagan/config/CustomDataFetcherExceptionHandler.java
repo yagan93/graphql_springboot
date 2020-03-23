@@ -1,5 +1,6 @@
 package ch.yagan.config;
 
+import ch.yagan.config.errorHandling.ExceptionHandler;
 import graphql.execution.DataFetcherExceptionHandler;
 import graphql.execution.DataFetcherExceptionHandlerParameters;
 import graphql.execution.ExecutionPath;
