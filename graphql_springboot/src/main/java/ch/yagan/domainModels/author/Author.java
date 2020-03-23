@@ -31,16 +31,17 @@ public class Author extends CoreEntity {
 		return name;
 	}
 
-	public void setName(String name) {
+	public Author setName(String name) {
 		this.name = name;
+		return this;
 	}
 
 	public Integer getAge() {
 		return age;
 	}
 
-	public void setAge(Integer age) {
+	public Author setAge(Integer age) {
 		this.age = age;
+		return this;
 	}
-
 }
