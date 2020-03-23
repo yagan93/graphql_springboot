@@ -1,7 +1,6 @@
 type Author {
 	id: String!
 	name: String!
-	age: Int
 }
 
 input AuthorInput {

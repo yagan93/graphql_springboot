@@ -2,7 +2,9 @@ package ch.yagan.domainModels.author;
 
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 import java.util.List;
 
@@ -16,6 +18,7 @@ public class AuthorQueries implements GraphQLQueryResolver {
         this.authorService = authorService;
     }
 
+    @ResponseStatus(value = HttpStatus.CREATED)
     public List<Author> findAllAuthors() {
         return authorService.findAll();
     }

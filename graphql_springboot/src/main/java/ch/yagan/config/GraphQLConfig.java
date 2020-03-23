@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 @Configuration
 public class GraphQLConfig {
 
-    @Bean
+    //@Bean
     public GraphQLErrorHandler errorHandler() {
         return new GraphQLErrorHandler() {
 
