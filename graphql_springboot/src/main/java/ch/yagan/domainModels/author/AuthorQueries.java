@@ -1,7 +1,5 @@
 package ch.yagan.domainModels.author;
 
-import ch.yagan.domainModels.author.mapper.AuthorInput;
-import ch.yagan.domainModels.author.mapper.AuthorMapper;
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
